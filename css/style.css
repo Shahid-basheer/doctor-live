@@ -13,6 +13,23 @@
   --lightblue: #363ba1;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  display: none;
+}
+
+@font-face {
+  font-family: "GalanoGrotesqueAltDEMO-Bold";
+  src: url("../font/GalanoGrotesqueAltDEMO-Bold.otf") format("otf"),
+    url("../font/GalanoGrotesqueDEMO-Bold.otf") format("otf");
+  font-weight: normal;
+}
+
+body {
+  font-family: "GalanoGrotesqueAltDEMO-Bold", "GalanoGrotesqueDEMO-Bold",
+    sans-serif !important;
+}
+
 /* 
 ************ Background Color ******************
 */
@@ -444,7 +461,9 @@
 }
 .form-flex {
   width: 100%;
-  height: 100vh;
+  height: auto;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -468,7 +487,7 @@
   background: transparent;
   border: 1px solid #fff;
   border-radius: 5rem;
-  padding: 10px;
+  padding: 22px;
   margin: 10px;
   outline: none;
 }
@@ -535,9 +554,8 @@
 
 .form-modal {
   max-width: 60rem;
-  height: 33rem;
+  height: 25rem;
   text-align: center;
-  padding: 40px;
   border-radius: 15px;
 }
 
@@ -555,12 +573,13 @@
 
 .modal-form-input {
   width: 20rem;
-  height: 3rem;
+  height: 2.5rem;
   background: transparent;
-  border: 1px solid #fff;
+  color: #fff;
+  border: 1px solid #d9d9d9;
   border-radius: 5rem;
-  padding: 10px;
-  margin: 10px;
+  padding: 19px;
+  margin: 8px;
   outline: none;
 }
 .modal-form-input::placeholder {
@@ -569,7 +588,7 @@
 
 .modal-form-btn {
   width: 20rem;
-  height: 3rem;
+  height: 2.5rem;
   background: #fff;
   color: var(--blue);
   border-radius: 30px;
@@ -734,17 +753,23 @@
   }
 }
 @media only screen and (min-width: 1200px) {
-  /* .slide-footer-flex {
+  .slide-footer-flex {
     height: 10rem;
+    padding: 3rem;
   }
 
   #shadow-box-slide-footer {
     height: 10rem;
     margin-top: -10rem;
   }
+
   .top-bar {
     top: 4rem;
-  } */
+  }
+
+  .lh-16 {
+    line-height: 16px !important;
+  }
 
   .carousel-control-prev {
     left: 0px !important;
@@ -796,5 +821,8 @@
 
   .mobile-hwdt {
     display: none;
+  }
+  .img {
+    margin: 0;
   }
 }
