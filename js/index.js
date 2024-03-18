@@ -183,3 +183,15 @@ document.addEventListener("DOMContentLoaded", function () {
     svgs[activeIndex].style.fill = "#121891";
   });
 });
+
+// whatsapp icon show
+
+var whatsapp = document.querySelector(".whatsapp-icon");
+document.addEventListener("scroll", (event) => {
+  var scrollY = window.scrollY;
+  if (scrollY > 1500) {
+    whatsapp.style.display = "block";
+  } else {
+    whatsapp.style.display = "none";
+  }
+});
