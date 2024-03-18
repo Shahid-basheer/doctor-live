@@ -616,6 +616,34 @@ body {
   width: 5% !important;
   justify-content: space-between !important;
 }
+
+.whatsapp-icon {
+  position: fixed;
+  right: 2rem;
+  font-size: 4rem;
+  bottom: 1rem;
+  color: #7df192;
+  transform: scale(1);
+  animation-name: whatsapp;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: initial;
+}
+
+@keyframes whatsapp {
+  0% {
+    right: 0rem;
+    transform: scale(0.5);
+  }
+  50% {
+    right: 1rem;
+    transform: scale(0.7);
+  }
+  100% {
+    right: 2rem;
+    transform: scale(1);
+  }
+}
 /* ---------------------------------- Media query --------------------------- 
 
 
