@@ -1,4 +1,4 @@
-var topImg = "../assets/img/top-module-image.png";
+var topImg = "./assets/img/top-module-image.png";
 var alertBox = document.querySelector("#alert-box-icon");
 var alertDiv = document.querySelector("#alert-box-div");
 var navbar = document.querySelector(".top-bar");
