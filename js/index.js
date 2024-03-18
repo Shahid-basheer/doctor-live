@@ -44,7 +44,7 @@ window.addEventListener("scroll", function () {
     box2.classList.add("active-box");
     box1.classList.remove("active-box");
     box3.classList.remove("active-box");
-    img.src = "../assets/img/pro-lap1.png";
+    img.src = "./assets/img/pro-lap1.png";
   } else if (
     boxRect3.top < viewportHeight / 2 &&
     boxRect3.bottom > viewportHeight / 2
