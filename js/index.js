@@ -56,28 +56,6 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// window.addEventListener("scroll", () => {
-//   var counterClient = document.querySelector("#counter-client");
-//   var counterRect = document.querySelector(".strategic-flex");
-//   var countRect = counterRect.getBoundingClientRect();
-
-//   function updateCounterDisplay() {
-//     counterClient.textContent = countClient;
-//   }
-
-//   function incrementCount() {
-//     if (countClient < 10) countClient++;
-//     updateCounterDisplay();
-//   }
-
-//   if (countRect.top === 487) {
-//     console.log(countRect);
-//     var interval = setInterval(incrementCount, 10000);
-//   } else {
-//     // clearInterval(interval);
-//   }
-// });
-
 window.addEventListener("scroll", () => {
   var counterClient = document.querySelector("#counter-client");
   var counterPatient = document.querySelector("#counter-patient");
@@ -173,7 +151,32 @@ document.addEventListener("DOMContentLoaded", function () {
     buttons.forEach(function (button) {
       button.classList.remove("active-button");
     });
-    console.log(buttons);
     buttons[activeIndex].classList.add("active-button");
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  var carousel = document.getElementById("carouselExampleIndicators");
+  var svgs = document.querySelectorAll("svg");
+  var prevActiveSVG = null;
+
+  carousel.addEventListener("slide.bs.carousel", function (event) {
+    var activeIndex = event.to;
+    svgs[0].classList.remove("active-svg");
+    if (prevActiveSVG) {
+      prevActiveSVG.style.fill = "";
+      var prevPaths = prevActiveSVG.querySelectorAll("path");
+      prevPaths.forEach(function (path) {
+        path.style.fill = "";
+      });
+    }
+    var newActiveSVG = svgs[activeIndex];
+    newActiveSVG.style.fill = "blue";
+    prevActiveSVG = newActiveSVG;
+    var newPaths = newActiveSVG.querySelectorAll("path");
+    newPaths.forEach(function (path) {
+      path.style.fill = "#fff";
+    });
+    svgs[activeIndex].style.fill = "#121891";
   });
 });
