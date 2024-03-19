@@ -1,4 +1,4 @@
-var topImg = "./assets/img/top-module-image.png";
+var topImg = "./assets/img/innovative1.svg";
 var whatsapp = document.querySelector(".whatsapp-icon");
 var alertBox = document.querySelector("#alert-box-icon");
 var alertDiv = document.querySelector("#alert-box-div");
@@ -45,7 +45,7 @@ window.addEventListener("scroll", function () {
     box2.classList.add("active-box");
     box1.classList.remove("active-box");
     box3.classList.remove("active-box");
-    img.src = "./assets/img/pro-lap1.png";
+    img.src = "./assets/img/innovative2.svg";
     img.style.transition = "2s linear";
     img.style.width = "100%";
     img.style.height = "20rem";
