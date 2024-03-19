@@ -650,6 +650,26 @@ body {
     transform: scale(1);
   }
 }
+
+.gallery {
+  display: flex;
+  gap: 2rem;
+  animation: slideRight 20s linear infinite;
+}
+
+.client-logo-img {
+  width: 200px;
+  height: 200px;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 /* ---------------------------------- Media query --------------------------- 
 
 
