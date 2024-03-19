@@ -1,4 +1,5 @@
 var topImg = "./assets/img/top-module-image.png";
+var whatsapp = document.querySelector(".whatsapp-icon");
 var alertBox = document.querySelector("#alert-box-icon");
 var alertDiv = document.querySelector("#alert-box-div");
 var navbar = document.querySelector(".top-bar");
@@ -186,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // whatsapp icon show
 
-var whatsapp = document.querySelector(".whatsapp-icon");
+whatsapp.style.display = "none";
 document.addEventListener("scroll", (event) => {
   var scrollY = window.scrollY;
   if (scrollY > 1500) {

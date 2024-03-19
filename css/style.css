@@ -628,6 +628,7 @@ body {
   font-size: 4rem;
   bottom: 1rem;
   color: #7df192;
+  display: none;
   transform: scale(1);
   animation-name: whatsapp;
   animation-duration: 0.5s;
