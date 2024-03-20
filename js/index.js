@@ -196,3 +196,67 @@ document.addEventListener("scroll", (event) => {
     whatsapp.style.display = "none";
   }
 });
+
+// Form submission
+
+var form1 = document.getElementById("my-form1");
+var form2 = document.getElementById("my-form2");
+async function handleSubmit(event) {
+  event.preventDefault();
+  var status = document.getElementById("my-form-status");
+  var modal = document.querySelector(".thanks-modal");
+  var modal1 = document.querySelector(".modal1");
+  var modalBackDrop = document.querySelector(".modal-backdrop");
+  var closeButton = document.querySelector(".close");
+  closeButton.addEventListener("click", function () {
+    modal.classList.remove("show");
+    modal.style.display = "none";
+    modal.setAttribute("aria-modal", "false");
+    modal1.classList.remove("show");
+    modalBackDrop.classList.remove("show");
+    modal1.style.display = "none";
+    modalBackDrop.style.display = "none";
+    modal1.setAttribute("aria-modal", "false");
+    console.log(closeButton);
+  });
+  var data = new FormData(event.target);
+  console.log("event", modal);
+  fetch(event.target.action, {
+    method: "post",
+    body: data,
+    headers: {
+      Accept: "application/json",
+    },
+  })
+    .then((response) => {
+      if (response.ok) {
+        status.innerHTML = "Thanks for your submission!";
+        modal.classList.add("show");
+        modal.style.display = "block";
+        modal.setAttribute("aria-modal", "true");
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) {
+            modal.classList.remove("show");
+            modal.style.display = "none";
+            modal.setAttribute("aria-modal", "false");
+          }
+        });
+        form.reset();
+      } else {
+        response.json().then((data) => {
+          if (Object.hasOwn(data, "errors")) {
+            status.innerHTML = data["errors"]
+              .map((error) => error["message"])
+              .join(", ");
+          } else {
+            status.innerHTML = "Oops! There was a problem submitting your form";
+          }
+        });
+      }
+    })
+    .catch((error) => {
+      status.innerHTML = "Oops! There was a problem submitting your form";
+    });
+}
+form1.addEventListener("submit", handleSubmit);
+form2.addEventListener("submit", handleSubmit);

@@ -636,6 +636,17 @@ body {
   animation-iteration-count: initial;
 }
 
+/* Custom Modal*/
+
+.custom-modal .modal-dialog {
+  max-width: 826px;
+  height: 535px;
+  background: #121891 !important;
+}
+.modal-content {
+  border: none !important;
+}
+
 @keyframes whatsapp {
   0% {
     right: 0rem;
@@ -655,6 +666,8 @@ body {
   display: flex;
   gap: 2rem;
   animation: slideRight 20s linear infinite;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .client-logo-img {
@@ -664,8 +677,9 @@ body {
 
 @keyframes slideRight {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0);
   }
+
   100% {
     transform: translateX(-100%);
   }
