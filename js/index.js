@@ -260,3 +260,36 @@ async function handleSubmit(event) {
 }
 form1.addEventListener("submit", handleSubmit);
 form2.addEventListener("submit", handleSubmit);
+
+// Animation why choose
+
+var animationTriggered = false;
+
+document.addEventListener("scroll", function () {
+  if (!animationTriggered) {
+    var scrollTop = window.scrollY;
+    var leftDivs = document.querySelectorAll(".left-slide");
+    var rightDivs = document.querySelectorAll(".right-slide");
+    var anyInViewport =
+      Array.from(leftDivs).some(function (leftDiv) {
+        var rect = leftDiv.getBoundingClientRect();
+        return rect.top <= window.innerHeight && rect.bottom >= 0;
+      }) ||
+      Array.from(rightDivs).some(function (rightDiv) {
+        var rect = rightDiv.getBoundingClientRect();
+        return rect.top <= window.innerHeight && rect.bottom >= 0;
+      });
+
+    if (anyInViewport) {
+      Array.from(leftDivs).forEach(function (leftDiv) {
+        leftDiv.style.left = "0";
+        leftDiv.style.animation = "leftSlide linear 2s";
+      });
+      Array.from(rightDivs).forEach(function (rightDiv) {
+        rightDiv.style.right = "0";
+        rightDiv.style.animation = "rightSlide linear 2s";
+      });
+      animationTriggered = true;
+    }
+  }
+});
