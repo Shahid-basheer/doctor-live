@@ -622,6 +622,12 @@ body {
   justify-content: space-between !important;
 }
 
+.desktop-version {
+  display: block;
+}
+.mobile-version {
+  display: none;
+}
 .whatsapp-icon {
   position: fixed;
   right: 2rem;
@@ -634,6 +640,30 @@ body {
   animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: initial;
+}
+
+.gallery {
+  display: flex;
+  gap: 2rem;
+  animation: slideRight 20s linear infinite;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.client-logo-img {
+  width: 200px;
+  height: 200px;
+}
+
+/* Custom Modal*/
+
+.custom-modal .modal-dialog {
+  max-width: 826px;
+  height: 535px;
+  background: #121891 !important;
+}
+.modal-content {
+  border: none !important;
 }
 
 /* Why chooose animation */
@@ -665,16 +695,6 @@ body {
     right: 0;
   }
 }
-/* Custom Modal*/
-
-.custom-modal .modal-dialog {
-  max-width: 826px;
-  height: 535px;
-  background: #121891 !important;
-}
-.modal-content {
-  border: none !important;
-}
 
 @keyframes whatsapp {
   0% {
@@ -691,19 +711,6 @@ body {
   }
 }
 
-.gallery {
-  display: flex;
-  gap: 2rem;
-  animation: slideRight 20s linear infinite;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-.client-logo-img {
-  width: 200px;
-  height: 200px;
-}
-
 @keyframes slideRight {
   0% {
     transform: translateX(0);
@@ -713,6 +720,7 @@ body {
     transform: translateX(-100%);
   }
 }
+
 /* ---------------------------------- Media query --------------------------- 
 
 
@@ -784,7 +792,7 @@ body {
   }
 
   .top-bar {
-    top: 5rem;
+    top: 4.6rem;
   }
 
   .img {
@@ -801,6 +809,12 @@ body {
   .below-form-btn {
     width: 100%;
     margin-bottom: 1rem;
+  }
+  .desktop-version {
+    display: none;
+  }
+  .mobile-version {
+    display: block;
   }
 }
 @media only screen and (min-width: 400px) {
@@ -823,6 +837,12 @@ body {
   .below-form-btn {
     width: 100%;
     margin-bottom: 1rem;
+  }
+  .desktop-version {
+    display: none;
+  }
+  .mobile-version {
+    display: block;
   }
 }
 
@@ -875,6 +895,12 @@ body {
   .tailored-inner-flex > div:nth-child(2) {
     width: 50%;
     text-align: left;
+  }
+  .desktop-version {
+    display: block;
+  }
+  .mobile-version {
+    display: none;
   }
 }
 @media only screen and (min-width: 1200px) {

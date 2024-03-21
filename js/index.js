@@ -241,7 +241,8 @@ async function handleSubmit(event) {
             modal.setAttribute("aria-modal", "false");
           }
         });
-        form.reset();
+        form1.reset();
+        form2.reset();
       } else {
         response.json().then((data) => {
           if (Object.hasOwn(data, "errors")) {
