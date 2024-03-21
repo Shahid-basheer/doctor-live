@@ -188,7 +188,70 @@ Top Carousel
   height: auto;
   background: var(--blue);
   padding: 1rem;
-  font-size: 5px;
+  font-size: 10px;
+}
+
+.mobile-strategic-flex {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* Why chooose animation */
+.left-slide-mobile {
+  position: relative;
+  left: -50%;
+  animation: none;
+}
+
+.right-slide-mobile {
+  position: relative;
+  right: -70%;
+  animation: none;
+}
+
+@keyframes leftSlide {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes rightSlide {
+  0% {
+    right: -70%;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes whatsapp {
+  0% {
+    right: 0rem;
+    transform: scale(0.5);
+  }
+  50% {
+    right: 1rem;
+    transform: scale(0.7);
+  }
+  100% {
+    right: 2rem;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 /* .mobile-top-module-flex > div > .inner-module:nth-child(1) {

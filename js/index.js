@@ -162,7 +162,7 @@ window.addEventListener("scroll", () => {
     var counterAdministration = document.querySelector(
       "#counter-administration1"
     );
-    var counterRect = document.querySelector(".strategic-flex");
+    var counterRect = document.querySelector(".mobile-strategic-flex");
     var countRect = counterRect.getBoundingClientRect();
     var counterClientInterval;
     var counterPatientInterval;
@@ -392,7 +392,7 @@ async function handleSubmit(event) {
 form1.addEventListener("submit", handleSubmit);
 form2.addEventListener("submit", handleSubmit);
 
-// Animation why choose
+// Animation why choose for desktop
 
 var animationTriggered = false;
 
@@ -421,6 +421,38 @@ document.addEventListener("scroll", function () {
         rightDiv.style.animation = "rightSlide linear 2s";
       });
       animationTriggered = true;
+    }
+  }
+});
+
+// animation why choose for mobile
+var animationTriggeredMobile = false;
+
+document.addEventListener("scroll", function () {
+  if (!animationTriggeredMobile) {
+    var scrollTop = window.scrollY;
+    var leftDivs = document.querySelectorAll(".left-slide-mobile");
+    var rightDivs = document.querySelectorAll(".right-slide-mobile");
+    var anyInViewport =
+      Array.from(leftDivs).some(function (leftDiv) {
+        var rect = leftDiv.getBoundingClientRect();
+        return rect.top <= window.innerHeight && rect.bottom >= 0;
+      }) ||
+      Array.from(rightDivs).some(function (rightDiv) {
+        var rect = rightDiv.getBoundingClientRect();
+        return rect.top <= window.innerHeight && rect.bottom >= 0;
+      });
+
+    if (anyInViewport) {
+      Array.from(leftDivs).forEach(function (leftDiv) {
+        leftDiv.style.left = "0";
+        leftDiv.style.animation = "leftSlide linear 2s";
+      });
+      Array.from(rightDivs).forEach(function (rightDiv) {
+        rightDiv.style.right = "0";
+        rightDiv.style.animation = "rightSlide linear 2s";
+      });
+      animationTriggeredMobile = true;
     }
   }
 });
