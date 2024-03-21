@@ -245,17 +245,33 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Success Unveiled
+// Success Unveiled for desktop
 document.addEventListener("DOMContentLoaded", function () {
   var carousel = document.getElementById("carouselExampleAutoplaying");
   var buttons = document.querySelectorAll(".externalButton");
-  carousel.addEventListener("slide.bs.carousel", function (event) {
-    var activeIndex = event.to;
-    buttons.forEach(function (button) {
-      button.classList.remove("active-button");
+  if (window.innerWidth > 1000) {
+    carousel.addEventListener("slide.bs.carousel", function (event) {
+      var activeIndex = event.to;
+      buttons.forEach(function (button) {
+        button.classList.remove("active-button");
+      });
+      buttons[activeIndex].classList.add("active-button");
     });
-    buttons[activeIndex].classList.add("active-button");
-  });
+  }
+});
+// Success Unveiled for mobile
+document.addEventListener("DOMContentLoaded", function () {
+  var carousel = document.getElementById("carouselExampleAutoplaying1");
+  var buttons = document.querySelectorAll(".externalButton1");
+  if (window.innerWidth < 1000) {
+    carousel.addEventListener("slide.bs.carousel", function (event) {
+      var activeIndex = event.to;
+      buttons.forEach(function (button) {
+        button.classList.remove("active-button");
+      });
+      buttons[activeIndex].classList.add("active-button");
+    });
+  }
 });
 
 // Tailored Module for Desktop
