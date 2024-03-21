@@ -180,6 +180,17 @@ Top Carousel
   font-size: 10px;
   padding: 1rem;
 }
+
+/* Strategic module */
+
+.mobile-strategic {
+  width: 100%;
+  height: auto;
+  background: var(--blue);
+  padding: 1.5rem;
+  font-size: 10px;
+}
+
 /* .mobile-top-module-flex > div > .inner-module:nth-child(1) {
     border-left: 7px;
     border-top: 0;

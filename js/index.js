@@ -62,91 +62,186 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Counter
+// Counter for desktop
 window.addEventListener("scroll", () => {
-  var counterClient = document.querySelector("#counter-client");
-  var counterPatient = document.querySelector("#counter-patient");
-  var counterReduction = document.querySelector("#counter-reduction");
-  var counterAdministration = document.querySelector("#counter-administration");
-  var counterRect = document.querySelector(".strategic-flex");
-  var countRect = counterRect.getBoundingClientRect();
-  var counterClientInterval;
-  var counterPatientInterval;
-  var counterReductionInterval;
-  var counterAdministrationInterval;
-
-  // CounterClient
-  function updateCounterClientDisplay() {
-    counterClient.textContent = countClient;
-  }
-
-  function incrementCounterClient() {
-    if (countClient < 10) {
-      countClient++;
-      updateCounterClientDisplay();
-    } else {
-      clearInterval(counterClientInterval);
-    }
-  }
-
-  if (countRect.top <= window.innerHeight && countRect.bottom >= 0) {
-    counterClientInterval = setInterval(incrementCounterClient, 500);
-  }
-
-  // CounterPatient
-  function updateCounterPatientDisplay() {
-    counterPatient.textContent = countPatient;
-  }
-
-  function incrementCounterPatient() {
-    if (countPatient < 50) {
-      countPatient++;
-      updateCounterPatientDisplay();
-    } else {
-      clearInterval(counterPatientInterval);
-    }
-  }
-
-  if (countRect.top <= window.innerHeight && countRect.bottom >= 0) {
-    counterPatientInterval = setInterval(incrementCounterPatient, 500);
-  }
-  // CounterReduction
-  function updateCounterReductionDisplay() {
-    counterReduction.textContent = countReduction;
-  }
-
-  function incrementCounterReduction() {
-    if (countReduction < 30) {
-      countReduction++;
-      updateCounterReductionDisplay();
-    } else {
-      clearInterval(counterReductionInterval);
-    }
-  }
-
-  if (countRect.top <= window.innerHeight && countRect.bottom >= 0) {
-    counterReductionInterval = setInterval(incrementCounterReduction, 500);
-  }
-
-  // CounterAdministration
-  function updateCounterAdministrationDisplay() {
-    counterAdministration.textContent = countAdministration;
-  }
-
-  function incrementCounterAdministration() {
-    if (countAdministration < 40) {
-      countAdministration++;
-      updateCounterAdministrationDisplay();
-    } else {
-      clearInterval(counterAdministrationInterval);
-    }
-  }
-
-  if (countRect.top <= window.innerHeight && countRect.bottom >= 0) {
-    counterAdministrationInterval = setInterval(
-      incrementCounterAdministration,
-      500
+  if (window.innerWidth > 1000) {
+    var counterClient = document.querySelector("#counter-client");
+    var counterPatient = document.querySelector("#counter-patient");
+    var counterReduction = document.querySelector("#counter-reduction");
+    var counterAdministration = document.querySelector(
+      "#counter-administration"
     );
+    var counterRect = document.querySelector(".strategic-flex");
+    var countRect = counterRect.getBoundingClientRect();
+    var counterClientInterval;
+    var counterPatientInterval;
+    var counterReductionInterval;
+    var counterAdministrationInterval;
+
+    // CounterClient
+    function updateCounterClientDisplay() {
+      counterClient.textContent = countClient;
+    }
+
+    function incrementCounterClient() {
+      if (countClient < 10) {
+        countClient++;
+        updateCounterClientDisplay();
+      } else {
+        clearInterval(counterClientInterval);
+      }
+    }
+
+    if (countRect.top <= window.innerHeight && countRect.bottom >= 0) {
+      counterClientInterval = setInterval(incrementCounterClient, 500);
+    }
+
+    // CounterPatient
+    function updateCounterPatientDisplay() {
+      counterPatient.textContent = countPatient;
+    }
+
+    function incrementCounterPatient() {
+      if (countPatient < 50) {
+        countPatient++;
+        updateCounterPatientDisplay();
+      } else {
+        clearInterval(counterPatientInterval);
+      }
+    }
+
+    if (countRect.top <= window.innerHeight && countRect.bottom >= 0) {
+      counterPatientInterval = setInterval(incrementCounterPatient, 500);
+    }
+    // CounterReduction
+    function updateCounterReductionDisplay() {
+      counterReduction.textContent = countReduction;
+    }
+
+    function incrementCounterReduction() {
+      if (countReduction < 30) {
+        countReduction++;
+        updateCounterReductionDisplay();
+      } else {
+        clearInterval(counterReductionInterval);
+      }
+    }
+
+    if (countRect.top <= window.innerHeight && countRect.bottom >= 0) {
+      counterReductionInterval = setInterval(incrementCounterReduction, 500);
+    }
+
+    // CounterAdministration
+    function updateCounterAdministrationDisplay() {
+      counterAdministration.textContent = countAdministration;
+    }
+
+    function incrementCounterAdministration() {
+      if (countAdministration < 40) {
+        countAdministration++;
+        updateCounterAdministrationDisplay();
+      } else {
+        clearInterval(counterAdministrationInterval);
+      }
+    }
+
+    if (countRect.top <= window.innerHeight && countRect.bottom >= 0) {
+      counterAdministrationInterval = setInterval(
+        incrementCounterAdministration,
+        500
+      );
+    }
+  }
+});
+// Counter for mobile
+window.addEventListener("scroll", () => {
+  if (window.innerWidth < 1000) {
+    var counterClient = document.querySelector("#counter-client1");
+    var counterPatient = document.querySelector("#counter-patient1");
+    var counterReduction = document.querySelector("#counter-reduction1");
+    var counterAdministration = document.querySelector(
+      "#counter-administration1"
+    );
+    var counterRect = document.querySelector(".strategic-flex");
+    var countRect = counterRect.getBoundingClientRect();
+    var counterClientInterval;
+    var counterPatientInterval;
+    var counterReductionInterval;
+    var counterAdministrationInterval;
+
+    // CounterClient
+    function updateCounterClientDisplay() {
+      counterClient.textContent = countClient;
+    }
+
+    function incrementCounterClient() {
+      if (countClient < 10) {
+        countClient++;
+        updateCounterClientDisplay();
+      } else {
+        clearInterval(counterClientInterval);
+      }
+    }
+
+    if (countRect.top <= window.innerHeight && countRect.bottom >= 0) {
+      counterClientInterval = setInterval(incrementCounterClient, 500);
+    }
+
+    // CounterPatient
+    function updateCounterPatientDisplay() {
+      counterPatient.textContent = countPatient;
+    }
+
+    function incrementCounterPatient() {
+      if (countPatient < 50) {
+        countPatient++;
+        updateCounterPatientDisplay();
+      } else {
+        clearInterval(counterPatientInterval);
+      }
+    }
+
+    if (countRect.top <= window.innerHeight && countRect.bottom >= 0) {
+      counterPatientInterval = setInterval(incrementCounterPatient, 500);
+    }
+    // CounterReduction
+    function updateCounterReductionDisplay() {
+      counterReduction.textContent = countReduction;
+    }
+
+    function incrementCounterReduction() {
+      if (countReduction < 30) {
+        countReduction++;
+        updateCounterReductionDisplay();
+      } else {
+        clearInterval(counterReductionInterval);
+      }
+    }
+
+    if (countRect.top <= window.innerHeight && countRect.bottom >= 0) {
+      counterReductionInterval = setInterval(incrementCounterReduction, 500);
+    }
+
+    // CounterAdministration
+    function updateCounterAdministrationDisplay() {
+      counterAdministration.textContent = countAdministration;
+    }
+
+    function incrementCounterAdministration() {
+      if (countAdministration < 40) {
+        countAdministration++;
+        updateCounterAdministrationDisplay();
+      } else {
+        clearInterval(counterAdministrationInterval);
+      }
+    }
+
+    if (countRect.top <= window.innerHeight && countRect.bottom >= 0) {
+      counterAdministrationInterval = setInterval(
+        incrementCounterAdministration,
+        500
+      );
+    }
   }
 });
 
