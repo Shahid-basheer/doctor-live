@@ -187,8 +187,8 @@ Top Carousel
   width: 100%;
   height: auto;
   background: var(--blue);
-  padding: 1.5rem;
-  font-size: 10px;
+  padding: 1rem;
+  font-size: 5px;
 }
 
 /* .mobile-top-module-flex > div > .inner-module:nth-child(1) {
