@@ -199,6 +199,16 @@ Top Carousel
   flex-wrap: wrap;
 }
 
+/* Product */
+
+.mobile-product {
+  width: 100%;
+  height: auto;
+  background: #f7f7fbcf;
+  padding: 5rem;
+  font-size: 10px;
+}
+
 /* Why chooose animation */
 .left-slide-mobile {
   position: relative;
