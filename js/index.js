@@ -17,6 +17,8 @@ alertBox.addEventListener("click", () => {
   topCarousel.style.marginTop = "4.2rem";
   shadowBox.style.top = "0rem";
 });
+
+// Innovative module for desktop
 window.addEventListener("scroll", function () {
   var box1 = document.querySelector("#box1");
   var box2 = document.querySelector("#box2");
@@ -60,6 +62,7 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// Counter
 window.addEventListener("scroll", () => {
   var counterClient = document.querySelector("#counter-client");
   var counterPatient = document.querySelector("#counter-patient");
@@ -147,6 +150,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// Success Unveiled
 document.addEventListener("DOMContentLoaded", function () {
   var carousel = document.getElementById("carouselExampleAutoplaying");
   var buttons = document.querySelectorAll(".externalButton");
@@ -159,30 +163,61 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Tailored Module for Desktop
 document.addEventListener("DOMContentLoaded", function () {
   var carousel = document.getElementById("carouselExampleIndicators");
-  var svgs = document.querySelectorAll("svg");
+  var svgs = document.querySelectorAll(".desktop button > svg ");
   var prevActiveSVG = null;
-
-  carousel.addEventListener("slide.bs.carousel", function (event) {
-    var activeIndex = event.to;
-    svgs[0].classList.remove("active-svg");
-    if (prevActiveSVG) {
-      prevActiveSVG.style.fill = "";
-      var prevPaths = prevActiveSVG.querySelectorAll("path");
-      prevPaths.forEach(function (path) {
-        path.style.fill = "";
+  if (window.innerWidth > 1000) {
+    console.log("desktop", svgs);
+    carousel.addEventListener("slide.bs.carousel", function (event) {
+      var activeIndex = event.to;
+      svgs[0].classList.remove("active-svg");
+      if (prevActiveSVG) {
+        prevActiveSVG.style.fill = "";
+        var prevPaths = prevActiveSVG.querySelectorAll("path");
+        prevPaths.forEach(function (path) {
+          path.style.fill = "";
+        });
+      }
+      var newActiveSVG = svgs[activeIndex];
+      newActiveSVG.style.fill = "blue";
+      prevActiveSVG = newActiveSVG;
+      var newPaths = newActiveSVG.querySelectorAll("path");
+      newPaths.forEach(function (path) {
+        path.style.fill = "#fff";
       });
-    }
-    var newActiveSVG = svgs[activeIndex];
-    newActiveSVG.style.fill = "blue";
-    prevActiveSVG = newActiveSVG;
-    var newPaths = newActiveSVG.querySelectorAll("path");
-    newPaths.forEach(function (path) {
-      path.style.fill = "#fff";
+      svgs[activeIndex].style.fill = "#121891";
     });
-    svgs[activeIndex].style.fill = "#121891";
-  });
+  }
+});
+// Tailored Module for Mobile
+document.addEventListener("DOMContentLoaded", function () {
+  var carousel = document.getElementById("carouselExampleIndicators1");
+  var svgs = document.querySelectorAll(".mobile button > svg");
+  var prevActiveSVG = null;
+  if (window.innerWidth < 1000) {
+    console.log("mobile", svgs);
+    carousel.addEventListener("slide.bs.carousel", function (event) {
+      var activeIndex = event.to;
+      svgs[0].classList.remove("active-svg");
+      if (prevActiveSVG) {
+        prevActiveSVG.style.fill = "";
+        var prevPaths = prevActiveSVG.querySelectorAll("path");
+        prevPaths.forEach(function (path) {
+          path.style.fill = "";
+        });
+      }
+      var newActiveSVG = svgs[activeIndex];
+      newActiveSVG.style.fill = "blue";
+      prevActiveSVG = newActiveSVG;
+      var newPaths = newActiveSVG.querySelectorAll("path");
+      newPaths.forEach(function (path) {
+        path.style.fill = "#fff";
+      });
+      svgs[activeIndex].style.fill = "#121891";
+    });
+  }
 });
 
 // whatsapp icon show

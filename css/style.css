@@ -613,15 +613,6 @@ body {
   margin-top: 10px;
 }
 
-.carousel-control-prev {
-  width: 5% !important;
-  justify-content: space-between !important;
-}
-.carousel-control-next {
-  width: 5% !important;
-  justify-content: space-between !important;
-}
-
 .desktop-version {
   display: block;
 }
@@ -901,6 +892,14 @@ body {
   }
   .mobile-version {
     display: none;
+  }
+  .carousel-control-prev {
+    width: 5% !important;
+    justify-content: space-between !important;
+  }
+  .carousel-control-next {
+    width: 5% !important;
+    justify-content: space-between !important;
   }
 }
 @media only screen and (min-width: 1200px) {
