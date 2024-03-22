@@ -1,6 +1,6 @@
 .mobile-top-bar {
   position: fixed !important;
-  top: 4.6rem;
+  top: 4.5rem;
   z-index: 3;
   width: 100%;
   min-height: 50px;
@@ -301,6 +301,47 @@ Top Carousel
   background-position: center;
 }
 
+/* Modal form */
+
+.mobile-custom-modal .modal-dialog {
+  max-width: 22.5rem;
+  height: 25rem;
+  background: #363ba1 !important;
+}
+.mobile-modal-form-input {
+  width: 17rem;
+  height: 2rem;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 5rem;
+  padding-left: 1rem;
+  margin: 8px;
+  outline: none;
+  background: #4655a9;
+  font-family: "GalanoGrotesqueAltDemot-Bold", sans-serif;
+}
+.mobile-modal-form-input::placeholder {
+  color: #cecfe8;
+}
+
+.mobile-modal-form-btn {
+  width: 17rem;
+  height: 2.5rem;
+  background: #fff;
+  color: var(--blue);
+  border-radius: 30px;
+  border: none;
+  font-weight: 900;
+  margin-top: 10px;
+}
+
+/* Thanks Modal */
+.thanks-modal1 .modal-dialog {
+  max-width: 22.5rem;
+  height: 25rem;
+  background: #121891 !important;
+}
 /* Whatsapp icon */
 .whatsapp-icon1 {
   position: fixed;

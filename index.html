@@ -3146,7 +3146,7 @@
                 class="text-blue fw-bold rounded-full border-0 p-1 px-3"
                 type="button"
                 data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop"
+                data-bs-target="#staticBackdrop2"
               >
                 Claim Yours Now!
               </button>
@@ -3211,7 +3211,7 @@
             class="rounded-full bg-light border-0 float-end mobile-book-demo-btn"
             type="button"
             data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop"
+            data-bs-target="#staticBackdrop2"
           >
             Book Demo
           </button>
@@ -3266,7 +3266,7 @@
                         type="button"
                         class="btn btn-primary"
                         data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop"
+                        data-bs-target="#staticBackdrop2"
                       >
                         Explore Innovation
                       </button>
@@ -3347,7 +3347,7 @@
                         class="border-0 bg-light mt-4 explore-innovation-btn"
                         type="button"
                         data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop"
+                        data-bs-target="#staticBackdrop2"
                       >
                         Request a Demo
                       </button>
@@ -3453,7 +3453,7 @@
                       type="button"
                       class="btn btn-primary"
                       data-bs-toggle="modal"
-                      data-bs-target="#staticBackdrop"
+                      data-bs-target="#staticBackdrop2"
                     >
                       Customize Your Journey
                     </button>
@@ -4495,7 +4495,7 @@
               class="tailored-module-btn"
               type="button"
               data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
+              data-bs-target="#staticBackdrop2"
             >
               Optimize Your Workflow
             </button>
@@ -4750,7 +4750,7 @@
               type="button"
               class="btn btn-primary"
               data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
+              data-bs-target="#staticBackdrop2"
             >
               Request a Demo
             </button>
@@ -5136,7 +5136,8 @@
                 <span class="visually-hidden">Next</span>
               </button>
               <div class="ps-5">
-                <button class="hwdt-btn">Request a demo</button>
+                <button class="hwdt-btn" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop2">Request a demo</button>
               </div>
             </div>
           </div>
@@ -5580,14 +5581,14 @@
             </div>
             <div class="form-modal" style="border-radius: 0">
               <div class="mx-auto text-white pt-5">
-                <img src="./assets/img/subsuccess.svg" alt="" />
-                <h6 class="fs-2 fw-larger mt-5 mb-4">
+                <img width="81px" height="81px" src="./assets/img/subsuccess.svg" alt="" />
+                <h6 class="fs-5 fw-larger mt-5 mb-4">
                   <span class="text-green">Thank You</span> For Contacting Us!
                 </h6>
-                <p class="fs-5 m-0 fw-normal lh-16">
+                <p class="m-0 fw-normal lh-16" style="font-size: 14px">
                   We Have Received Your Message
                 </p>
-                <p class="m-0 fw-normal" style="font-size: 1.4rem">
+                <p class="m-0 fw-normal fs-6">
                   We’ll Reach You Out Immediately!
                 </p>
               </div>
@@ -5599,6 +5600,102 @@
       <a href="https://wa.me/+919633447508?text=Hello" target="_blank"
         ><i class="fa-brands fa-square-whatsapp whatsapp-icon1"></i
       ></a>
+
+       <!-- Modal Box  mobile -->
+
+       <div
+       class="modal fade modal2 mobile-custom-modal"
+       id="staticBackdrop2"
+       data-bs-backdrop="static"
+       data-bs-keyboard="false"
+       tabindex="-1"
+       aria-labelledby="staticBackdropLabel"
+       aria-hidden="true"
+     >
+       <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header">
+             <div class="w-100 d-flex justify-content-end">
+               <button
+                 class="border-0 bg-transparent close-modal1"
+                 data-bs-dismiss="modal"
+                 aria-label="Close"
+               >
+                 <img width="33px" src="./assets/img/close-icon.png" />
+               </button>
+             </div>
+           </div>
+           <div class="form-modal" style="border-radius: 0">
+             <h6 class="text-white fw-bold fs-5 lh-16 m-0">
+               Drop In Your Contact Below
+             </h6>
+             <h6 class="text-green fs-6 fw-larger lh-16 m-0">
+              To Get The Best Solution <br> At Light Speed
+             </h6>
+             <form
+               action="https://api.web3forms.com/submit"
+               class="mt-2"
+               method="post"
+               autocomplete="off"
+               id="my-form4"
+             >
+               <div>
+                 <input
+                   name="access_key"
+                   value="fd9a06da-e21c-4a43-b11c-eba0eecabacc"
+                   class="modal-form-input"
+                   type="hidden"
+                 />
+                 <input type="hidden" name="from_name" value="DoctorLive" />
+                 <input
+                   type="hidden"
+                   name="subject"
+                   value="New Doctor Live Form"
+                 />
+                 <input
+                   name="fname"
+                   class="mobile-modal-form-input"
+                   type="text"
+                   placeholder="Full Name"
+                   required
+                 />
+               </div>
+               <div>
+                 <input
+                   name="company"
+                   class="mobile-modal-form-input"
+                   type="text"
+                   placeholder="Company/Organization"
+                   required
+                 />
+               </div>
+               <div>
+                 <input
+                   name="email"
+                   class="mobile-modal-form-input"
+                   type="email"
+                   placeholder="Email"
+                   required
+                 />
+               </div>
+               <div>
+                 <input
+                   name="contact"
+                   class="mobile-modal-form-input"
+                   type="number"
+                   placeholder="Contact Number"
+                   maxlength="12"
+                   required
+                 />
+               </div>
+               <div>
+                 <button type="submit" class="mobile-modal-form-btn">Submit</button>
+               </div>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
     </section>
 
 

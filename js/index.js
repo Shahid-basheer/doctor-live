@@ -360,6 +360,7 @@ document.addEventListener("scroll", (event) => {
 var form1 = document.getElementById("my-form1");
 var form2 = document.getElementById("my-form2");
 var form3 = document.getElementById("my-form3");
+var form4 = document.getElementById("my-form4");
 async function handleSubmit(event) {
   console.log("event", event);
   event.preventDefault();
@@ -367,6 +368,7 @@ async function handleSubmit(event) {
   var modal = document.querySelector(".thanks-modal");
   var thanksModal1 = document.querySelector(".thanks-modal1");
   var modal1 = document.querySelector(".modal1");
+  var modal2 = document.querySelector(".modal2");
   var modalBackDrop = document.querySelector(".modal-backdrop");
   var closeButton = document.querySelector(".close");
   closeButton.addEventListener("click", function () {
@@ -377,10 +379,13 @@ async function handleSubmit(event) {
     thanksModal1.style.display = "none";
     thanksModal1.setAttribute("aria-modal", "false");
     modal1.classList.remove("show");
+    modal2.classList.remove("show");
     modalBackDrop.classList.remove("show");
     modal1.style.display = "none";
+    modal2.style.display = "none";
     modalBackDrop.style.display = "none";
     modal1.setAttribute("aria-modal", "false");
+    modal2.setAttribute("aria-modal", "false");
   });
   var data = new FormData(event.target);
   console.log("event", modal);
@@ -417,6 +422,7 @@ async function handleSubmit(event) {
         form1.reset();
         form2.reset();
         form3.reset();
+        form4.reset();
       } else {
         response.json().then((data) => {
           if (Object.hasOwn(data, "errors")) {
@@ -436,7 +442,7 @@ async function handleSubmit(event) {
 form1.addEventListener("submit", handleSubmit);
 form2.addEventListener("submit", handleSubmit);
 form3.addEventListener("submit", handleSubmit);
-
+form4.addEventListener("submit", handleSubmit);
 // Animation why choose for desktop
 
 var animationTriggered = false;
