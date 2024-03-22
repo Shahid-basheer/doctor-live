@@ -1,5 +1,6 @@
 var topImg = "./assets/img/innovative1.svg";
 var whatsapp = document.querySelector(".whatsapp-icon");
+var whatsapp1 = document.querySelector(".whatsapp-icon1");
 var alertBox = document.querySelector("#alert-box-icon");
 var alertDiv = document.querySelector("#alert-box-div");
 var navbar = document.querySelector(".top-bar");
@@ -331,7 +332,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// whatsapp icon show
+// whatsapp icon show for desktop
 
 whatsapp.style.display = "none";
 document.addEventListener("scroll", (event) => {
@@ -340,6 +341,17 @@ document.addEventListener("scroll", (event) => {
     whatsapp.style.display = "block";
   } else {
     whatsapp.style.display = "none";
+  }
+});
+// whatsapp icon show for mobile
+
+whatsapp1.style.display = "none";
+document.addEventListener("scroll", (event) => {
+  var scrollY = window.scrollY;
+  if (scrollY > 1500) {
+    whatsapp1.style.display = "block";
+  } else {
+    whatsapp1.style.display = "none";
   }
 });
 

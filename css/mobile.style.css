@@ -264,6 +264,57 @@ Top Carousel
   margin-left: 10px;
 }
 
+/* Footer */
+.mobile-footer {
+  width: 100%;
+  height: auto;
+  background: var(--blue);
+  padding: 2rem;
+  margin-top: 1px;
+}
+
+.mobile-footer-icon-img1 {
+  width: 79px;
+  height: 64px;
+  background: var(--white);
+  background-image: url("../assets/img/footer-icon1.png");
+  border-radius: 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.mobile-footer-icon-img2 {
+  width: 79px;
+  height: 64px;
+  background: var(--white);
+  background-image: url("../assets/img/footer-icon2.png");
+  border-radius: 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.mobile-footer-icon-img3 {
+  width: 146px;
+  height: 64px;
+  background: var(--white);
+  background-image: url("../assets/img/footer-icon3.png");
+  border-radius: 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Whatsapp icon */
+.whatsapp-icon1 {
+  position: fixed;
+  right: 2rem;
+  font-size: 4rem;
+  bottom: 1rem;
+  color: #7df192;
+  display: none;
+  transform: scale(1);
+  animation-name: whatsapp;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: initial;
+}
 /* Why chooose animation */
 .left-slide-mobile {
   position: relative;
