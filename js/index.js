@@ -347,10 +347,13 @@ document.addEventListener("scroll", (event) => {
 
 var form1 = document.getElementById("my-form1");
 var form2 = document.getElementById("my-form2");
+var form3 = document.getElementById("my-form3");
 async function handleSubmit(event) {
+  console.log("event", event);
   event.preventDefault();
   var status = document.getElementById("my-form-status");
   var modal = document.querySelector(".thanks-modal");
+  var thanksModal1 = document.querySelector(".thanks-modal1");
   var modal1 = document.querySelector(".modal1");
   var modalBackDrop = document.querySelector(".modal-backdrop");
   var closeButton = document.querySelector(".close");
@@ -358,12 +361,14 @@ async function handleSubmit(event) {
     modal.classList.remove("show");
     modal.style.display = "none";
     modal.setAttribute("aria-modal", "false");
+    thanksModal1.classList.remove("show");
+    thanksModal1.style.display = "none";
+    thanksModal1.setAttribute("aria-modal", "false");
     modal1.classList.remove("show");
     modalBackDrop.classList.remove("show");
     modal1.style.display = "none";
     modalBackDrop.style.display = "none";
     modal1.setAttribute("aria-modal", "false");
-    console.log(closeButton);
   });
   var data = new FormData(event.target);
   console.log("event", modal);
@@ -387,8 +392,19 @@ async function handleSubmit(event) {
             modal.setAttribute("aria-modal", "false");
           }
         });
+        thanksModal1.classList.add("show");
+        thanksModal1.style.display = "block";
+        thanksModal1.setAttribute("aria-modal", "true");
+        thanksModal1.addEventListener("click", function (e) {
+          if (e.target === thanksModal1) {
+            thanksModal1.classList.remove("show");
+            thanksModal1.style.display = "none";
+            thanksModal1.setAttribute("aria-modal", "false");
+          }
+        });
         form1.reset();
         form2.reset();
+        form3.reset();
       } else {
         response.json().then((data) => {
           if (Object.hasOwn(data, "errors")) {
@@ -407,6 +423,7 @@ async function handleSubmit(event) {
 }
 form1.addEventListener("submit", handleSubmit);
 form2.addEventListener("submit", handleSubmit);
+form3.addEventListener("submit", handleSubmit);
 
 // Animation why choose for desktop
 
