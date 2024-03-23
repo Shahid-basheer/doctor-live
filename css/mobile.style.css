@@ -304,7 +304,7 @@ Top Carousel
 /* Modal form */
 
 .mobile-custom-modal .modal-dialog {
-  max-width: 22.5rem;
+  max-width: 826px;
   height: 25rem;
   background: #363ba1 !important;
 }

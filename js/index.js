@@ -370,23 +370,26 @@ async function handleSubmit(event) {
   var modal1 = document.querySelector(".modal1");
   var modal2 = document.querySelector(".modal2");
   var modalBackDrop = document.querySelector(".modal-backdrop");
-  var closeButton = document.querySelector(".close");
-  closeButton.addEventListener("click", function () {
-    modal.classList.remove("show");
-    modal.style.display = "none";
-    modal.setAttribute("aria-modal", "false");
-    thanksModal1.classList.remove("show");
-    thanksModal1.style.display = "none";
-    thanksModal1.setAttribute("aria-modal", "false");
-    modal1.classList.remove("show");
-    modal2.classList.remove("show");
-    modalBackDrop.classList.remove("show");
-    modal1.style.display = "none";
-    modal2.style.display = "none";
-    modalBackDrop.style.display = "none";
-    modal1.setAttribute("aria-modal", "false");
-    modal2.setAttribute("aria-modal", "false");
+  var closeButton = document.querySelectorAll(".close");
+  closeButton.forEach((button) => {
+    button.addEventListener("click", () => {
+      modal.classList.remove("show");
+      modal.style.display = "none";
+      modal.setAttribute("aria-modal", "false");
+      thanksModal1.classList.remove("show");
+      thanksModal1.style.display = "none";
+      thanksModal1.setAttribute("aria-modal", "false");
+      modal1.classList.remove("show");
+      modal2.classList.remove("show");
+      modalBackDrop.classList.remove("show");
+      modal1.style.display = "none";
+      modal2.style.display = "none";
+      modalBackDrop.style.display = "none";
+      modal1.setAttribute("aria-modal", "false");
+      modal2.setAttribute("aria-modal", "false");
+    });
   });
+
   var data = new FormData(event.target);
   console.log("event", modal);
   fetch(event.target.action, {
