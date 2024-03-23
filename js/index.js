@@ -419,6 +419,7 @@ async function handleSubmit(event) {
             thanksModal1.classList.remove("show");
             thanksModal1.style.display = "none";
             thanksModal1.setAttribute("aria-modal", "false");
+            window.location.reload();
           }
         });
         form1.reset();
