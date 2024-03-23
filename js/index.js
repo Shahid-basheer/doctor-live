@@ -399,6 +399,7 @@ async function handleSubmit(event) {
     .then((response) => {
       if (response.ok) {
         status.innerHTML = "Thanks for your submission!";
+        // For desktop
         modal.classList.add("show");
         modal.style.display = "block";
         modal.setAttribute("aria-modal", "true");
@@ -409,6 +410,7 @@ async function handleSubmit(event) {
             modal.setAttribute("aria-modal", "false");
           }
         });
+        // For Mobile
         thanksModal1.classList.add("show");
         thanksModal1.style.display = "block";
         thanksModal1.setAttribute("aria-modal", "true");
@@ -423,6 +425,14 @@ async function handleSubmit(event) {
         form2.reset();
         form3.reset();
         form4.reset();
+        modal1.classList.remove("show");
+        modal2.classList.remove("show");
+        modalBackDrop.classList.remove("show");
+        modal1.style.display = "none";
+        modal2.style.display = "none";
+        modalBackDrop.style.display = "none";
+        modal1.setAttribute("aria-modal", "false");
+        modal2.setAttribute("aria-modal", "false");
       } else {
         response.json().then((data) => {
           if (Object.hasOwn(data, "errors")) {
