@@ -24,8 +24,9 @@ Top Carousel
   height: 40rem;
   max-width: 100vw;
   background-image: url("../assets/img/slide1-mobile.svg");
-  background-size: 100% 100%;
+  background-size: 100%;
   background-repeat: no-repeat;
+  background-position: bottom;
   padding: 2rem;
 }
 .mobile-carousel-slide-2 {
@@ -35,6 +36,7 @@ Top Carousel
   background-image: url("../assets/img/slide2-mobile.svg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: bottom;
   padding: 2rem;
 }
 .mobile-carousel-slide-3 {
@@ -44,7 +46,7 @@ Top Carousel
   background-image: url("../assets/img/slide3-mobile.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
   padding: 2rem;
 }
 
@@ -54,6 +56,11 @@ Top Carousel
   object-fit: contain;
 }
 
+.mobile-slide3-img {
+  position: absolute;
+  bottom: 10rem;
+  right: 0;
+}
 .mobile-slide-footer-flex {
   display: flex;
   flex-wrap: wrap;
