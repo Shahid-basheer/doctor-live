@@ -362,16 +362,10 @@ var form3 = document.getElementById("my-form3");
 var form4 = document.getElementById("my-form4");
 var isCaptchaSucces = false;
 function handleSubmitForm(token) {
-  console.log(token);
-  isCaptchaSucces = true;
+  console.log(token, "success recaptcha");
+  handleSubmit();
 }
-async function handleSubmit(event) {
-  event.preventDefault();
-  grecaptcha.execute();
-  if (!isCaptchaSucces) {
-    console.log("Failed Recaptcha");
-    return;
-  }
+async function handleSubmit() {
   var status = document.getElementById("my-form-status");
   var modal = document.querySelector(".thanks-modal");
   var thanksModal1 = document.querySelector(".thanks-modal1");
@@ -408,7 +402,6 @@ async function handleSubmit(event) {
   })
     .then((response) => {
       if (response.ok) {
-        isCaptchaSucces = false;
         status.innerHTML = "Thanks for your submission!";
         // For desktop
         modal.classList.add("show");
@@ -463,7 +456,7 @@ async function handleSubmit(event) {
       status.innerHTML = "Oops! There was a problem submitting your form";
     });
 }
-form1.addEventListener("submit", handleSubmit);
+//form1.addEventListener("submit", handleSubmit);
 form2.addEventListener("submit", handleSubmit);
 form3.addEventListener("submit", handleSubmit);
 form4.addEventListener("submit", handleSubmit);
