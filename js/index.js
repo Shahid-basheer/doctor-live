@@ -369,242 +369,120 @@ var form2 = document.getElementById("my-form2");
 var form3 = document.getElementById("my-form3");
 var form4 = document.getElementById("my-form4");
 
-// async function handleSubmit(event) {
-//   event.preventDefault();
-//   var token;
-//   try {
-//     token = await grecaptcha.execute(
-//       "6LeQTdQpAAAAAH6dqcMl-GKG7O0ntz-2w1fY6uEo",
-//       {
-//         action: "submit",
-//       }
-//     );
-
-//     if (token) {
-//       console.log("reCAPTCHA token",token);
-//     } else {
-//       console.error("Error: Invalid reCAPTCHA token.", token);
-//     }
-//   } catch (error) {
-//     console.error("Error executing reCAPTCHA:", error);
-//   }
-//   console.log(token,'token')
-//   if (!token.length) {
-//     return;
-//   }
-//   console.log("success recaptcha");
-//   var status = document.getElementById("my-form-status");
-//   var modal = document.querySelector(".thanks-modal");
-//   var thanksModal1 = document.querySelector(".thanks-modal1");
-//   var modal1 = document.querySelector(".modal1");
-//   var modal2 = document.querySelector(".modal2");
-//   var modalBackDrop = document.querySelector(".modal-backdrop");
-//   var closeButton = document.querySelectorAll(".close");
-//   closeButton.forEach((button) => {
-//     button.addEventListener("click", () => {
-//       modal.classList.remove("show");
-//       modal.style.display = "none";
-//       modal.setAttribute("aria-modal", "false");
-//       thanksModal1.classList.remove("show");
-//       thanksModal1.style.display = "none";
-//       thanksModal1.setAttribute("aria-modal", "false");
-//       modal1.classList.remove("show");
-//       modal2.classList.remove("show");
-//       modalBackDrop.classList.remove("show");
-//       modal1.style.display = "none";
-//       modal2.style.display = "none";
-//       modalBackDrop.style.display = "none";
-//       modal1.setAttribute("aria-modal", "false");
-//       modal2.setAttribute("aria-modal", "false");
-//     });
-//   });
-
-//   var data = new FormData(event.target);
-//   fetch(event.target.action, {
-//     method: "post",
-//     body: data,
-//     headers: {
-//       Accept: "application/json",
-//     },
-//   })
-//     .then((response) => {
-//       if (response.ok) {
-//         status.innerHTML = "Thanks for your submission!";
-//         // For desktop
-//         modal.classList.add("show");
-//         modal.style.display = "block";
-//         modal.setAttribute("aria-modal", "true");
-//         modal.addEventListener("click", function (e) {
-//           if (e.target === modal) {
-//             modal.classList.remove("show");
-//             modal.style.display = "none";
-//             modal.setAttribute("aria-modal", "false");
-//             window.location.reload();
-//           }
-//           console.log("reload.............", e.target, "    ", modal);
-//         });
-//         // For Mobile
-//         thanksModal1.classList.add("show");
-//         thanksModal1.style.display = "block";
-//         thanksModal1.setAttribute("aria-modal", "true");
-//         thanksModal1.addEventListener("click", function (e) {
-//           if (e.target === thanksModal1) {
-//             thanksModal1.classList.remove("show");
-//             thanksModal1.style.display = "none";
-//             thanksModal1.setAttribute("aria-modal", "false");
-//             window.location.reload();
-//           }
-//         });
-//         form1.reset();
-//         form2.reset();
-//         form3.reset();
-//         form4.reset();
-//         modal1.classList.remove("show");
-//         modal2.classList.remove("show");
-//         modalBackDrop.classList.remove("show");
-//         modal1.style.display = "none";
-//         modal2.style.display = "none";
-//         modalBackDrop.style.display = "none";
-//         modal1.setAttribute("aria-modal", "false");
-//         modal2.setAttribute("aria-modal", "false");
-//       } else {
-//         response.json().then((data) => {
-//           if (Object.hasOwn(data, "errors")) {
-//             status.innerHTML = data["errors"]
-//               .map((error) => error["message"])
-//               .join(", ");
-//           } else {
-//             status.innerHTML = "Oops! There was a problem submitting your form";
-//           }
-//         });
-//       }
-//     })
-//     .catch((error) => {
-//       status.innerHTML = "Oops! There was a problem submitting your form";
-//     });
-// }
-
 async function handleSubmit(event) {
   event.preventDefault();
-  // var token;
-  // try {
-  //   token = await grecaptcha.execute(
-  //     "6LeQTdQpAAAAAH6dqcMl-GKG7O0ntz-2w1fY6uEo",
-  //     {
-  //       action: "submit",
-  //     }
-  //   );
+  var token;
+  try {
+    token = await grecaptcha.execute(
+      "6LeQTdQpAAAAAH6dqcMl-GKG7O0ntz-2w1fY6uEo",
+      {
+        action: "submit",
+      }
+    );
 
-  //   if (token) {
-  //     console.log("reCAPTCHA token");
-  //   } else {
-  //     console.error("Error: Invalid reCAPTCHA token.", token);
-  //   }
-  // } catch (error) {
-  //   console.error("Error executing reCAPTCHA:", error);
-  // }
+    if (token) {
+      console.log("reCAPTCHA token");
+    } else {
+      console.error("Error: Invalid reCAPTCHA token.", token);
+    }
+  } catch (error) {
+    console.error("Error executing reCAPTCHA:", error);
+  }
 
-  // if (!token.length) {
-  //   return;
-  // }
-  grecaptcha.ready(function () {
-    grecaptcha
-      .execute("6LeQTdQpAAAAAH6dqcMl-GKG7O0ntz-2w1fY6uEo", { action: "submit" })
-      .then(function (token) {
-        token = token;
-        console.log(token, "token");
-        var status = document.getElementById("my-form-status");
-        var modal = document.querySelector(".thanks-modal");
-        var thanksModal1 = document.querySelector(".thanks-modal1");
-        var modal1 = document.querySelector(".modal1");
-        var modal2 = document.querySelector(".modal2");
-        var modalBackDrop = document.querySelector(".modal-backdrop");
-        var closeButton = document.querySelectorAll(".close");
-        closeButton.forEach((button) => {
-          button.addEventListener("click", () => {
+  if (!token.length) {
+    alert("Please verify the captcha");
+    return;
+  }
+  console.log("success recaptcha");
+  var status = document.getElementById("my-form-status");
+  var modal = document.querySelector(".thanks-modal");
+  var thanksModal1 = document.querySelector(".thanks-modal1");
+  var modal1 = document.querySelector(".modal1");
+  var modal2 = document.querySelector(".modal2");
+  var modalBackDrop = document.querySelector(".modal-backdrop");
+  var closeButton = document.querySelectorAll(".close");
+  closeButton.forEach((button) => {
+    button.addEventListener("click", () => {
+      modal.classList.remove("show");
+      modal.style.display = "none";
+      modal.setAttribute("aria-modal", "false");
+      thanksModal1.classList.remove("show");
+      thanksModal1.style.display = "none";
+      thanksModal1.setAttribute("aria-modal", "false");
+      modal1.classList.remove("show");
+      modal2.classList.remove("show");
+      modalBackDrop.classList.remove("show");
+      modal1.style.display = "none";
+      modal2.style.display = "none";
+      modalBackDrop.style.display = "none";
+      modal1.setAttribute("aria-modal", "false");
+      modal2.setAttribute("aria-modal", "false");
+    });
+  });
+
+  var data = new FormData(event.target);
+  fetch(event.target.action, {
+    method: "post",
+    body: data,
+    headers: {
+      Accept: "application/json",
+    },
+  })
+    .then((response) => {
+      if (response.ok) {
+        status.innerHTML = "Thanks for your submission!";
+        // For desktop
+        modal.classList.add("show");
+        modal.style.display = "block";
+        modal.setAttribute("aria-modal", "true");
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) {
             modal.classList.remove("show");
             modal.style.display = "none";
             modal.setAttribute("aria-modal", "false");
+            window.location.reload();
+          }
+          console.log("reload.............", e.target, "    ", modal);
+        });
+        // For Mobile
+        thanksModal1.classList.add("show");
+        thanksModal1.style.display = "block";
+        thanksModal1.setAttribute("aria-modal", "true");
+        thanksModal1.addEventListener("click", function (e) {
+          if (e.target === thanksModal1) {
             thanksModal1.classList.remove("show");
             thanksModal1.style.display = "none";
             thanksModal1.setAttribute("aria-modal", "false");
-            modal1.classList.remove("show");
-            modal2.classList.remove("show");
-            modalBackDrop.classList.remove("show");
-            modal1.style.display = "none";
-            modal2.style.display = "none";
-            modalBackDrop.style.display = "none";
-            modal1.setAttribute("aria-modal", "false");
-            modal2.setAttribute("aria-modal", "false");
-          });
+            window.location.reload();
+          }
         });
-
-        var data = new FormData(event.target);
-        fetch(event.target.action, {
-          method: "post",
-          body: data,
-          headers: {
-            Accept: "application/json",
-          },
-        })
-          .then((response) => {
-            if (response.ok) {
-              status.innerHTML = "Thanks for your submission!";
-              // For desktop
-              modal.classList.add("show");
-              modal.style.display = "block";
-              modal.setAttribute("aria-modal", "true");
-              modal.addEventListener("click", function (e) {
-                if (e.target === modal) {
-                  modal.classList.remove("show");
-                  modal.style.display = "none";
-                  modal.setAttribute("aria-modal", "false");
-                  window.location.reload();
-                }
-                console.log("reload.............", e.target, "    ", modal);
-              });
-              // For Mobile
-              thanksModal1.classList.add("show");
-              thanksModal1.style.display = "block";
-              thanksModal1.setAttribute("aria-modal", "true");
-              thanksModal1.addEventListener("click", function (e) {
-                if (e.target === thanksModal1) {
-                  thanksModal1.classList.remove("show");
-                  thanksModal1.style.display = "none";
-                  thanksModal1.setAttribute("aria-modal", "false");
-                  window.location.reload();
-                }
-              });
-              form1.reset();
-              form2.reset();
-              form3.reset();
-              form4.reset();
-              modal1.classList.remove("show");
-              modal2.classList.remove("show");
-              modalBackDrop.classList.remove("show");
-              modal1.style.display = "none";
-              modal2.style.display = "none";
-              modalBackDrop.style.display = "none";
-              modal1.setAttribute("aria-modal", "false");
-              modal2.setAttribute("aria-modal", "false");
-            } else {
-              response.json().then((data) => {
-                if (Object.hasOwn(data, "errors")) {
-                  status.innerHTML = data["errors"]
-                    .map((error) => error["message"])
-                    .join(", ");
-                } else {
-                  status.innerHTML =
-                    "Oops! There was a problem submitting your form";
-                }
-              });
-            }
-          })
-          .catch((error) => {
+        form1.reset();
+        form2.reset();
+        form3.reset();
+        form4.reset();
+        modal1.classList.remove("show");
+        modal2.classList.remove("show");
+        modalBackDrop.classList.remove("show");
+        modal1.style.display = "none";
+        modal2.style.display = "none";
+        modalBackDrop.style.display = "none";
+        modal1.setAttribute("aria-modal", "false");
+        modal2.setAttribute("aria-modal", "false");
+      } else {
+        response.json().then((data) => {
+          if (Object.hasOwn(data, "errors")) {
+            status.innerHTML = data["errors"]
+              .map((error) => error["message"])
+              .join(", ");
+          } else {
             status.innerHTML = "Oops! There was a problem submitting your form";
-          });
-      });
-  });
+          }
+        });
+      }
+    })
+    .catch((error) => {
+      status.innerHTML = "Oops! There was a problem submitting your form";
+    });
 }
 form1.addEventListener("submit", handleSubmit);
 form2.addEventListener("submit", handleSubmit);
