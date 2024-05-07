@@ -360,25 +360,18 @@ var form1 = document.getElementById("my-form1");
 var form2 = document.getElementById("my-form2");
 var form3 = document.getElementById("my-form3");
 var form4 = document.getElementById("my-form4");
+var isCaptchaSucces = false;
 function handleSubmitForm(token) {
   console.log(token);
+  isCaptchaSucces = true;
 }
 async function handleSubmit(event) {
   event.preventDefault();
-  try {
-    await grecaptcha.execute();
-    var response = grecaptcha.getResponse();
-
-    console.log("reCAPTCHA response:", response);
-  } catch (error) {
-    console.error("An error occurred during reCAPTCHA execution:", error);
-  }
-
-  if (!response) {
-    alert("Please verify the captcha");
+  grecaptcha.execute();
+  if (!isCaptchaSucces) {
+    console.log("Failed Recaptcha");
     return;
   }
-
   var status = document.getElementById("my-form-status");
   var modal = document.querySelector(".thanks-modal");
   var thanksModal1 = document.querySelector(".thanks-modal1");
@@ -415,6 +408,7 @@ async function handleSubmit(event) {
   })
     .then((response) => {
       if (response.ok) {
+        isCaptchaSucces = false;
         status.innerHTML = "Thanks for your submission!";
         // For desktop
         modal.classList.add("show");
