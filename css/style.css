@@ -568,7 +568,7 @@ body {
 
 .form-modal {
   max-width: 60rem;
-  height: 25rem;
+  height: 28rem;
   text-align: center;
   border-radius: 15px;
 }
@@ -727,6 +727,11 @@ body {
     padding: 0.4rem !important;
   } */
 
+  .tailored-left-arrow,
+  .tailored-right-arrow {
+    width: 53px;
+  }
+
   .mobile-hwdt {
     display: block;
   }
@@ -786,6 +791,10 @@ body {
     top: 4.6rem;
   }
 
+  .product-flex {
+    justify-content: center;
+  }
+
   .img {
     margin: auto;
   }
@@ -817,6 +826,9 @@ body {
     top: 5rem;
   }
 
+  .product-flex {
+    justify-content: center;
+  }
   .form-flex > div {
     width: 100%;
     height: auto;
@@ -883,6 +895,9 @@ body {
     padding: 5rem;
   }
 
+  .product-flex {
+    justify-content: center;
+  }
   .tailored-inner-flex > div:nth-child(2) {
     width: 50%;
     text-align: left;
@@ -900,6 +915,9 @@ body {
   .carousel-control-next {
     width: 5% !important;
     justify-content: space-between !important;
+  }
+  .product-flex {
+    justify-content: space-around;
   }
 }
 @media only screen and (min-width: 1200px) {

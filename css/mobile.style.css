@@ -234,7 +234,7 @@ Top Carousel
 }
 .mobile-form {
   width: 336px;
-  height: 285px;
+  height: 330px;
   background: #363ba1;
   padding: 2rem;
   border-radius: 20px;
@@ -312,7 +312,7 @@ Top Carousel
 
 .mobile-custom-modal .modal-dialog {
   max-width: 826px;
-  height: 25rem;
+  height: 30rem;
   background: #363ba1 !important;
 }
 

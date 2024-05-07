@@ -61,6 +61,7 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
     <!--
@@ -889,7 +890,7 @@
               data-bs-target="#carouselExampleIndicators"
               data-bs-slide="next"
             >
-              <img src="./assets/img/tailored-right-arrow.svg" alt="" />
+              <img  src="./assets/img/tailored-right-arrow.svg" alt="" />
               <span class="visually-hidden">Next</span>
             </button>
           </div>
@@ -2894,15 +2895,27 @@
               </div>
               <div>
                 <input
-                  name="contact"
+                  name="place"
                   class="below-form-input"
-                  type="number"
+                  type="text"
+                  placeholder="Place"
+                  
+                />
+              </div>
+              <div>
+                <input
+                  name="contact"
+                  pattern="[0-9]{10,15}"
+                  title="Please enter a 10-digit number"
+                  class="below-form-input"
+                  type="tel"
                   placeholder="Contact Number"
                   required
                 />
               </div>
+              <div id="recaptcha" class="g-recaptcha" data-callback="handleSubmit" data-size="invisible"  data-sitekey="6LeQTdQpAAAAAH6dqcMl-GKG7O0ntz-2w1fY6uEo"></div>
               <div>
-                <button type="submit" class="below-form-btn">Submit</button>
+                <button type="submit" class="below-form-btn" >Submit</button>
               </div>
             </form>
           </div>
@@ -3072,9 +3085,20 @@
                 </div>
                 <div>
                   <input
-                    name="contact"
+                    name="place"
                     class="modal-form-input"
-                    type="number"
+                    type="text"
+                    placeholder="Place"
+                    
+                  />
+                </div>
+                <div>
+                  <input
+                    name="contact"
+                    pattern="[0-9]{10,15}"
+                  title="Please enter a 10-digit number"
+                    class="modal-form-input"
+                    type="tel"
                     placeholder="Contact Number"
                     required
                   />
@@ -3920,7 +3944,7 @@
               data-bs-slide="prev"
               style="height: 20rem"
             >
-              <img src="./assets/img/tailored-left-arrow.svg" alt="" />
+              <img class="tailored-left-arrow" src="./assets/img/tailored-left-arrow.svg" alt="" />
               <span class="visually-hidden">Previous</span>
             </button>
             <button
@@ -3930,7 +3954,7 @@
               data-bs-slide="next"
               style="height: 20rem"
             >
-              <img src="./assets/img/tailored-right-arrow.svg" alt="" />
+              <img class="tailored-right-arrow" src="./assets/img/tailored-right-arrow.svg" alt="" />
               <span class="visually-hidden">Next</span>
             </button>
           </div>
@@ -5508,9 +5532,20 @@
             </div>
             <div>
               <input
-                name="contact"
+                name="place"
                 class="mobile-below-form-input"
-                type="number"
+                type="text"
+                placeholder="Place"
+                
+              />
+            </div>
+            <div>
+              <input
+                name="contact"
+                pattern="[0-9]{10,15}"
+                  title="Please enter a 10-digit number"
+                class="mobile-below-form-input"
+                type="tel"
                 placeholder="Contact Number"
                 required
               />
@@ -5734,11 +5769,23 @@
                 </div>
                 <div>
                   <input
-                    name="contact"
+                    name="place"
                     class="mobile-modal-form-input"
-                    type="number"
+                    type="text"
+                    placeholder="Place"
+                    
+                  />
+                </div>
+                <div>
+                  
+                  <input
+                    name="contact"
+                    pattern="[0-9]{10,15}"
+                  title="Please enter a 10-digit number"
+                    class="mobile-modal-form-input"
+                    type="tel"
                     placeholder="Contact Number"
-                    maxlength="12"
+                  
                     required
                   />
                 </div>
@@ -5803,6 +5850,20 @@
       gtag("js", new Date());
 
       gtag("config", "AW-16548679119");
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-NE6JLNJ099"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-NE6JLNJ099");
     </script>
     <script src="./js/index.js"></script>
   </body>
