@@ -390,6 +390,7 @@ async function handleSubmit(event) {
   }
 
   if (!token.length) {
+    alert("Please verify the captcha");
     return;
   }
   console.log("success recaptcha");
