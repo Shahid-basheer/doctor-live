@@ -362,13 +362,18 @@ var form3 = document.getElementById("my-form3");
 var form4 = document.getElementById("my-form4");
 async function handleSubmit(event) {
   event.preventDefault();
-  await grecaptcha.execute();
-  var response = grecaptcha.getResponse();
-  console.log(response);
-  if (!response) {
-    alert("Please verify the captcha");
-    return;
+  try {
+    console.log("Executing reCAPTCHA...");
+    await grecaptcha.execute();
+    console.log("reCAPTCHA executed successfully.");
+
+    console.log("Getting reCAPTCHA response...");
+    var response = await grecaptcha.getResponse();
+    console.log("reCAPTCHA response:", response);
+  } catch (error) {
+    console.error("An error occurred during reCAPTCHA execution:", error);
   }
+
   var status = document.getElementById("my-form-status");
   var modal = document.querySelector(".thanks-modal");
   var thanksModal1 = document.querySelector(".thanks-modal1");
