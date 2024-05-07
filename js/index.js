@@ -381,7 +381,7 @@ async function handleSubmit(event) {
     );
 
     if (token) {
-      console.log("reCAPTCHA token");
+      console.log("reCAPTCHA token",token);
     } else {
       console.error("Error: Invalid reCAPTCHA token.", token);
     }
