@@ -388,7 +388,7 @@ async function handleSubmit(event) {
   } catch (error) {
     console.error("Error executing reCAPTCHA:", error);
   }
-
+  console.log(token,'token')
   if (!token.length) {
     return;
   }
