@@ -1,4 +1,10 @@
-
+function loadReCaptchaScript() {
+  var script = document.createElement("script");
+  script.src =
+    "https://www.google.com/recaptcha/api.js?render=6LeQTdQpAAAAAH6dqcMl-GKG7O0ntz-2w1fY6uEo";
+  document.head.appendChild(script);
+}
+loadReCaptchaScript();
 
 var topImg = "./assets/img/innovative1.svg";
 var whatsapp = document.querySelector(".whatsapp-icon");
