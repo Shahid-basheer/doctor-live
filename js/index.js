@@ -281,7 +281,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var svgs = document.querySelectorAll(".desktop button > svg ");
   var prevActiveSVG = null;
   if (window.innerWidth > 1000) {
-    console.log("desktop", svgs);
     carousel.addEventListener("slide.bs.carousel", function (event) {
       var activeIndex = event.to;
       svgs[0].classList.remove("active-svg");
@@ -362,8 +361,14 @@ var form2 = document.getElementById("my-form2");
 var form3 = document.getElementById("my-form3");
 var form4 = document.getElementById("my-form4");
 async function handleSubmit(event) {
-  console.log("event", event);
   event.preventDefault();
+  await grecaptcha.execute();
+  var response = grecaptcha.getResponse();
+  console.log(response);
+  if (!response) {
+    alert("Please verify the captcha");
+    return;
+  }
   var status = document.getElementById("my-form-status");
   var modal = document.querySelector(".thanks-modal");
   var thanksModal1 = document.querySelector(".thanks-modal1");
@@ -391,7 +396,6 @@ async function handleSubmit(event) {
   });
 
   var data = new FormData(event.target);
-  console.log("event", modal);
   fetch(event.target.action, {
     method: "post",
     body: data,
@@ -411,7 +415,9 @@ async function handleSubmit(event) {
             modal.classList.remove("show");
             modal.style.display = "none";
             modal.setAttribute("aria-modal", "false");
+            window.location.reload();
           }
+          console.log("reload.............", e.target, "    ", modal);
         });
         // For Mobile
         thanksModal1.classList.add("show");
