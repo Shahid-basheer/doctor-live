@@ -369,31 +369,18 @@ var form2 = document.getElementById("my-form2");
 var form3 = document.getElementById("my-form3");
 var form4 = document.getElementById("my-form4");
 
-async function handleSubmit(event) {
-  event.preventDefault();
-  var token;
-  try {
-    token = await grecaptcha.execute(
-      "6LeQTdQpAAAAAH6dqcMl-GKG7O0ntz-2w1fY6uEo",
-      {
-        action: "submit",
-      }
-    );
-
-    if (token) {
-      console.log("reCAPTCHA token");
-    } else {
-      console.error("Error: Invalid reCAPTCHA token.", token);
-    }
-  } catch (error) {
-    console.error("Error executing reCAPTCHA:", error);
-  }
-
+async function handleCaptcha(token) {
+  console.log(token, "token");
   if (!token.length) {
     alert("Please verify the captcha");
     return;
   }
   console.log("success recaptcha");
+  form1.submit();
+}
+async function handleSubmit(event) {
+  event.preventDefault();
+
   var status = document.getElementById("my-form-status");
   var modal = document.querySelector(".thanks-modal");
   var thanksModal1 = document.querySelector(".thanks-modal1");
@@ -484,7 +471,7 @@ async function handleSubmit(event) {
       status.innerHTML = "Oops! There was a problem submitting your form";
     });
 }
-form1.addEventListener("submit", handleSubmit);
+//form1.addEventListener("submit", handleSubmit);
 form2.addEventListener("submit", handleSubmit);
 form3.addEventListener("submit", handleSubmit);
 form4.addEventListener("submit", handleSubmit);
