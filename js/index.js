@@ -369,19 +369,19 @@ var form2 = document.getElementById("my-form2");
 var form3 = document.getElementById("my-form3");
 var form4 = document.getElementById("my-form4");
 
-async function handleCaptcha(token) {
-  console.log(token, "token");
-  if (!token.length) {
-    alert("Please verify the captcha");
-    return;
-  }
-  console.log("success recaptcha");
-  form1.submit();
-}
+// async function handleCaptcha(token) {
+//   console.log(token, "token");
+//   if (!token.length || !token) {
+//     alert("Please verify the captcha");
+//     return;
+//   }
+//   console.log("success recaptcha");
+//   handleSubmit();
+// }
 
-function handleCaptchaValidation() {
-  grecaptcha.execute();
-}
+// function handleCaptchaValidation() {
+//   grecaptcha.execute();
+// }
 
 async function handleSubmit(event) {
   event.preventDefault();
@@ -476,7 +476,7 @@ async function handleSubmit(event) {
       status.innerHTML = "Oops! There was a problem submitting your form";
     });
 }
-form1.addEventListener("submit", handleCaptchaValidation);
+form1.addEventListener("submit", handleSubmit);
 form2.addEventListener("submit", handleSubmit);
 form3.addEventListener("submit", handleSubmit);
 form4.addEventListener("submit", handleSubmit);
