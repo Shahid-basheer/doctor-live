@@ -371,7 +371,7 @@ var form4 = document.getElementById("my-form4");
 
 async function handleCaptcha(token) {
   console.log(token, "token");
-  if (!token.length) {
+  if (!token.length || !token) {
     alert("Please verify the captcha");
     return;
   }
