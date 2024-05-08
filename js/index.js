@@ -378,6 +378,11 @@ async function handleCaptcha(token) {
   console.log("success recaptcha");
   form1.submit();
 }
+
+function handleCaptchaValidation() {
+  grecaptcha.execute();
+}
+
 async function handleSubmit(event) {
   event.preventDefault();
 
@@ -471,7 +476,7 @@ async function handleSubmit(event) {
       status.innerHTML = "Oops! There was a problem submitting your form";
     });
 }
-//form1.addEventListener("submit", handleSubmit);
+form1.addEventListener("submit", handleCaptchaValidation);
 form2.addEventListener("submit", handleSubmit);
 form3.addEventListener("submit", handleSubmit);
 form4.addEventListener("submit", handleSubmit);
